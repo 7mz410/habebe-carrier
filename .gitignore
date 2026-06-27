@@ -1,0 +1,11 @@
+# Ignore everything by default
+*
+
+# Allow specific files/folders
+!index.html
+!style.css
+!app.js
+!images/
+!images/**
+!.gitignore
+!optimize_assets.py

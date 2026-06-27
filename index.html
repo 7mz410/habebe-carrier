@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habebé Essentials | Premium Sling Baby Carriers</title>
+  <meta name="description" content="Carry them close, keep your hands free. Discover the Habebé one-shoulder sling baby carrier, crafted in small batches from 100% natural cotton canvas.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky Navigation Header -->
+  <nav class="header-nav" id="main-nav">
+    <a href="#top" class="nav-logo-link" aria-label="Habebé Essentials Home">
+      <img src="images/logo_cream.png" alt="Habebé Essentials Logo" class="nav-logo-img">
+    </a>
+    <div class="nav-links-wrapper">
+      <a href="#showroom" class="nav-link">Showroom</a>
+      <a href="#craft" class="nav-link">The Carrier</a>
+      <a href="#story" class="nav-link">Our Story</a>
+      <button class="cart-toggle-btn" id="cart-drawer-toggle" aria-label="Open Shopping Cart">
+        <svg class="cart-icon-svg" viewBox="0 0 24 24">
+          <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+        <span>Snuggle List</span>
+        <span class="cart-badge-count" id="cart-counter-badge">0</span>
+      </button>
+      <a href="#showroom" class="nav-cta">Shop the collection</a>
+    </div>
+  </nav>
+
+  <!-- Hero Header Section -->
+  <header id="top" class="hero-header">
+    <div class="hero-inner">
+      <div class="hero-box">
+        <div class="hero-line-tag">
+          <span class="hero-line"></span>
+          <span class="hero-tag-text">Hands-free closeness</span>
+        </div>
+        <h1 class="hero-title">Carry them<br><em style="font-style:italic;font-weight:400;">close</em>, keep your hands free.</h1>
+        <p class="hero-desc">The Habebé one-shoulder baby carrier — a single, beautifully made sling that holds your little one against your heart and your day in your hands.</p>
+        <div class="hero-actions">
+          <a href="#showroom" class="btn-hero-primary">Enter the showroom →</a>
+          <a href="#story" class="btn-hero-secondary">Our story</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span class="hero-scroll-text">Scroll</span>
+      <span class="hero-scroll-line"></span>
+    </div>
+  </header>
+
+  <!-- Intro Statement Section -->
+  <section class="intro-sec" data-reveal>
+    <div class="intro-inner">
+      <img src="images/mark_teal.png" alt="Habebé Mark" class="intro-mark">
+      <p class="intro-text">Named for <em style="font-style:italic;">habibi</em> and <em style="font-style:italic;">bébé</em> — “my love, my baby.” Every Habebé is cut, sewn and finished in small batches, made to move from the school run to the marina without ever putting your baby down.</p>
+    </div>
+  </section>
+
+  <!-- Showroom Section -->
+  <section id="showroom" class="showroom-sec">
+    <div class="showroom-inner">
+      <div class="showroom-header-row" data-reveal>
+        <div>
+          <div class="showroom-header-title">
+            <span class="showroom-header-line"></span>
+            <span class="showroom-header-tag">The collection</span>
+          </div>
+          <h2 class="showroom-title">The Showroom</h2>
+        </div>
+        <div class="showroom-header-desc-wrapper">
+          <p class="showroom-header-desc">One carrier, three characters. Choose a colorway to see it on the floor.</p>
+          <span class="showroom-promo-tag">✦ Buy 2, save 25%</span>
+        </div>
+      </div>
+
+      <div class="showroom-card-layout" data-reveal>
+        <!-- Stage Display -->
+        <div class="showroom-stage">
+          <div class="showroom-shadow"></div>
+          <span class="showroom-giant-num" id="product-display-num">01</span>
+          <img src="images/sling_leopard.jpg" alt="Wildheart Leopard carrier" class="showroom-product-img" id="product-display-img">
+        </div>
+        
+        <!-- Detail Control Panel -->
+        <div class="showroom-details-pane">
+          <span class="showroom-details-tag" id="product-number-tag">Colorway 01 / 03</span>
+          <h3 class="showroom-product-title" id="product-title-label">Wildheart Leopard</h3>
+          <p class="showroom-product-desc" id="product-desc-label">Hand-printed leopard in warm camel and ink — unmistakable from across the room. For the parent who was never going to blend in.</p>
+
+          <!-- Dynamic Specs Checklist -->
+          <div class="showroom-specs-list" id="product-specs-container">
+            <div class="showroom-spec-item">
+              <span class="showroom-spec-bullet">◆</span>Hand-printed signature leopard
+            </div>
+            <div class="showroom-spec-item">
+              <span class="showroom-spec-bullet">◆</span>Gold woven fox label
+            </div>
+            <div class="showroom-spec-item">
+              <span class="showroom-spec-bullet">◆</span>Reinforced safety stitching
+            </div>
+          </div>
+
+          <!-- Color Swatch Row -->
+          <div class="showroom-swatch-row" style="margin-bottom: 20px;">
+            <span class="showroom-select-label">Select Color</span>
+            <div class="showroom-swatches-container">
+              <button class="showroom-swatch-btn active" data-index="0" title="Wildheart Leopard" style="background: linear-gradient(135deg,#E2C79A,#C8723C); border: 2px solid #E0A24A; box-shadow: 0 0 0 3px rgba(224,162,74,0.22);"></button>
+              <button class="showroom-swatch-btn" data-index="1" title="Midnight" style="background: linear-gradient(135deg,#2A2C33,#0E0F12); border: 2px solid rgba(245,240,231,0.35);"></button>
+              <button class="showroom-swatch-btn" data-index="2" title="Sage" style="background: linear-gradient(135deg,#C3D2D0,#A7BAB8); border: 2px solid rgba(245,240,231,0.35);"></button>
+            </div>
+          </div>
+
+          <!-- Size Selector Row -->
+          <div class="showroom-size-row" style="margin-bottom: 30px;">
+            <span class="showroom-select-label">Select Size</span>
+            <div class="showroom-size-btn-group">
+              <button class="showroom-size-btn">XS</button>
+              <button class="showroom-size-btn active">S</button>
+              <button class="showroom-size-btn">M</button>
+              <button class="showroom-size-btn">L</button>
+              <button class="showroom-size-btn">XL</button>
+            </div>
+          </div>
+
+          <!-- CTA Reserve Action -->
+          <div class="showroom-action-area">
+            <button class="showroom-btn-buy" id="showroom-add-to-cart-btn">Reserve — $70 →</button>
+            <div class="showroom-pricing-terms">
+              <span class="showroom-bundle-terms">Buy 2, take 25% off</span>
+              <span class="showroom-bundle-est" id="showroom-bundle-estimate-label">Two of these — $105 the pair</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Built for the Long Carry (Craft Details) -->
+  <section id="craft" class="craft-sec">
+    <div class="craft-inner">
+      <div class="craft-header" data-reveal>
+        <div class="craft-header-tag-row">
+          <span class="craft-header-line"></span>
+          <span class="craft-header-tag">Made by hand</span>
+          <span class="craft-header-line"></span>
+        </div>
+        <h2 class="craft-title">Built for the long carry</h2>
+        <p class="craft-desc">Structured where it counts, soft everywhere it touches — every seam earns its place.</p>
+      </div>
+
+      <div class="craft-cards-grid" data-reveal>
+        <div class="craft-card">
+          <div class="craft-card-img-box" style="background-image: url('images/detail_strap.jpg');"></div>
+          <div class="craft-card-details">
+            <span class="craft-card-num">01</span>
+            <h3 class="craft-card-title">One-shoulder ease</h3>
+            <p class="craft-card-body">No webbing maze, no second person required. Loop it over one shoulder and your baby settles in seconds — on and off in a single motion.</p>
+          </div>
+        </div>
+
+        <div class="craft-card">
+          <div class="craft-card-img-box" style="background-image: url('images/detail_back.jpg');"></div>
+          <div class="craft-card-details">
+            <span class="craft-card-num">02</span>
+            <h3 class="craft-card-title">The gold mark</h3>
+            <p class="craft-card-body">Our fennec fox, embroidered and foil-pressed onto the padded strap. A small signature you’ll feel every time you reach for it.</p>
+          </div>
+        </div>
+
+        <div class="craft-card">
+          <div class="craft-card-img-box" style="background-image: url('images/detail_leopard.jpg');"></div>
+          <div class="craft-card-details">
+            <span class="craft-card-num">03</span>
+            <h3 class="craft-card-title">Canvas that lasts</h3>
+            <p class="craft-card-body">Heavyweight cotton canvas with reinforced stress points — soft against newborn skin, tough enough for toddler years and many washes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spec stats band -->
+      <div class="stats-band" data-reveal>
+        <div class="stats-item">
+          <div class="stats-key">1</div>
+          <div class="stats-val">Shoulder, zero fuss</div>
+        </div>
+        <div class="stats-item">
+          <div class="stats-key">3</div>
+          <div class="stats-val">Signature colorways</div>
+        </div>
+        <div class="stats-item">
+          <div class="stats-key">15kg</div>
+          <div class="stats-val">Tested carry weight</div>
+        </div>
+        <div class="stats-item">
+          <div class="stats-key">100%</div>
+          <div class="stats-val">Cotton canvas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lifestyle Block Section -->
+  <section class="lifestyle-banner">
+    <div class="lifestyle-inner" data-reveal>
+      <div class="lifestyle-box">
+        <span class="lifestyle-tag">Out in the world</span>
+        <h2 class="lifestyle-title">Made for the days you carry everything.</h2>
+        <p class="lifestyle-desc">Sling it over one shoulder and go — the dock, the market, the long walk home. Mum or dad, newborn to toddler, Habebé keeps both hands free for everything else the day asks of you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section id="story" class="story-sec">
+    <div class="story-inner" data-reveal>
+      <div class="story-image-box">
+        <div class="story-image-canvas"></div>
+        <img src="images/mark_gold.png" alt="Habebé Mark Gold" class="story-mark-overlap">
+      </div>
+      <div class="story-details">
+        <div class="story-tag-row">
+          <span class="story-tag-line"></span>
+          <span class="story-tag-text">The mark</span>
+        </div>
+        <h2 class="story-title">A little fox, ears up, listening.</h2>
+        <p class="story-body-text">The fennec watches over every Habebé — small, alert, fiercely tender. It’s how we think about the first years: stay close, stay aware, and keep moving together.</p>
+        <p class="story-body-text">We started Habebé because carrying a baby shouldn’t mean a wall of buckles. One strap. One shoulder. One beautiful object you’ll reach for every single day.</p>
+        <div class="story-stats-row">
+          <div>
+            <div class="story-stat-card-title">Small batch</div>
+            <div class="story-stat-card-subtitle">Cut &amp; sewn by hand</div>
+          </div>
+          <div>
+            <div class="story-stat-card-title">0–3 yrs</div>
+            <div class="story-stat-card-subtitle">Newborn to toddler</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section & Email Subscribe -->
+  <footer class="footer-sec">
+    <div class="footer-inner">
+      <div class="footer-newsletter-box" data-reveal>
+        <img src="images/mark_cream.png" alt="Habebé Mark Cream" class="footer-mark">
+        <h2 class="footer-newsletter-title">Join the Habebé family.</h2>
+        <p class="footer-newsletter-desc">New colorways, restocks and small-batch drops — straight to your inbox.</p>
+        <form class="newsletter-email-form" id="email-subscribe-form">
+          <input type="email" placeholder="Your email address" required class="newsletter-email-input" id="newsletter-email">
+          <button type="submit" class="newsletter-submit-btn" id="newsletter-submit-label">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="footer-bottom-row">
+        <img src="images/logo_cream.png" alt="Habebé Essentials Logo" class="footer-logo-img">
+        <div class="footer-menu-links">
+          <a href="#showroom" class="footer-menu-link">Showroom</a>
+          <a href="#craft" class="footer-menu-link">The Carrier</a>
+          <a href="#story" class="footer-menu-link">Story</a>
+          <a href="mailto:hello@habebe.com" class="footer-menu-link">Contact</a>
+        </div>
+        <span class="footer-copyright">© 2026 Habebé Essentials</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sliding Cart Drawer Container -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer-pane">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Snuggle List</h3>
+      <button class="cart-close-btn" id="cart-drawer-close-btn" aria-label="Close Shopping Cart">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Items List container -->
+    <div class="cart-items-container" id="cart-items-list-container">
+      <!-- Empty Cart Initial state -->
+      <div class="cart-empty-state" id="cart-empty-state-view">
+        <svg class="cart-empty-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <p class="cart-empty-text">Your list is empty. Add a carrier to start snuggling!</p>
+        <button class="nav-cta" id="cart-drawer-back-to-shop" style="width: auto;">Browse Colors</button>
+      </div>
+    </div>
+
+    <!-- Pricing Summary Footer (Dynamically updated) -->
+    <div class="cart-footer-pane" id="cart-drawer-footer" style="display: none;">
+      <div class="cart-calc-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal-val">$0.00</span>
+      </div>
+      <div class="cart-calc-row discount" id="cart-discount-row-view" style="display: none;">
+        <span>Bundle discount (25% off)</span>
+        <span id="cart-discount-val">-$0.00</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cart-total-val">$0.00</span>
+      </div>
+
+      <div class="cart-promo-badge" id="cart-promo-badge-view" style="display: none;">
+        <svg class="cart-promo-badge-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3"/>
+        </svg>
+        <span>25% off bundle discount applied!</span>
+      </div>
+
+      <button class="btn-checkout" id="cart-drawer-checkout-btn">Complete Snuggle Order</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
