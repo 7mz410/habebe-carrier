@@ -7,21 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const colorways = [
     {
       name: 'Wildheart Leopard',
-      img: 'Product/prnt-copy.png',
+      img: 'images/sling_leopard.jpg',
       price: 70,
       desc: 'Hand-printed leopard in warm camel and ink — unmistakable from across the room. For the parent who was never going to blend in.',
       specs: ['Hand-printed signature leopard', 'Gold woven fox label', 'Reinforced safety stitching']
     },
     {
       name: 'Midnight',
-      img: 'Product/blk-copy.png',
+      img: 'images/sling_midnight.jpg',
       price: 60,
       desc: 'Deep navy-black with the fox mark in gold foil — evening-ready and endlessly easy. The one that goes with the good coat.',
       specs: ['Midnight canvas, gold-foil mark', 'Padded one-shoulder strap', 'Hidden interior pocket']
     },
     {
       name: 'Sage',
-      img: 'Product/wit-copy.png',
+      img: 'images/sling_sage.jpg',
       price: 50,
       desc: 'Soft mineral sage on breathable cotton canvas — the quiet one. Pairs with everything, hides the everyday, keeps its calm.',
       specs: ['Breathable 100% cotton canvas', 'Padded one-shoulder strap', 'Machine washable, line dry']

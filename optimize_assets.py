@@ -33,28 +33,26 @@ if __name__ == '__main__':
     images_dir = os.path.join(workspace, 'images')
     os.makedirs(images_dir, exist_ok=True)
     
-    # Task mapping: (src_name, dest_name, max_width, format)
+    # Task mapping: (src_path, dest_path, max_width, format)
     tasks = [
-        ('logo-cream.png', 'logo_cream.png', 400, 'PNG'),
-        ('logo-everglade.png', 'logo_everglade.png', 400, 'PNG'),
-        ('logo-gold.png', 'logo_gold.png', 400, 'PNG'),
-        ('mark-cream.png', 'mark_cream.png', 200, 'PNG'),
-        ('mark-gold.png', 'mark_gold.png', 200, 'PNG'),
-        ('mark-teal.png', 'mark_teal.png', 200, 'PNG'),
-        ('life-tender.jpg', 'life_tender.jpg', 1400, 'JPEG'),
-        ('life-marina.jpg', 'life_marina.jpg', 1400, 'JPEG'),
-        ('story-mother.jpg', 'story_mother.jpg', 1000, 'JPEG'),
-        ('sling-leopard.jpg', 'sling_leopard.jpg', 800, 'JPEG'),
-        ('sling-midnight.jpg', 'sling_midnight.jpg', 800, 'JPEG'),
-        ('sling-sage.jpg', 'sling_sage.jpg', 800, 'JPEG'),
-        ('detail-strap.jpg', 'detail_strap.jpg', 600, 'JPEG'),
-        ('detail-back.jpg', 'detail_back.jpg', 600, 'JPEG'),
-        ('detail-leopard.jpg', 'detail_leopard.jpg', 600, 'JPEG')
+        (os.path.join(handoff_assets, 'logo-cream.png'), os.path.join(images_dir, 'logo_cream.png'), 400, 'PNG'),
+        (os.path.join(handoff_assets, 'logo-everglade.png'), os.path.join(images_dir, 'logo_everglade.png'), 400, 'PNG'),
+        (os.path.join(handoff_assets, 'logo-gold.png'), os.path.join(images_dir, 'logo_gold.png'), 400, 'PNG'),
+        (os.path.join(handoff_assets, 'mark-cream.png'), os.path.join(images_dir, 'mark_cream.png'), 200, 'PNG'),
+        (os.path.join(handoff_assets, 'mark-gold.png'), os.path.join(images_dir, 'mark_gold.png'), 200, 'PNG'),
+        (os.path.join(handoff_assets, 'mark-teal.png'), os.path.join(images_dir, 'mark_teal.png'), 200, 'PNG'),
+        (os.path.join(handoff_assets, 'life-tender.jpg'), os.path.join(images_dir, 'life_tender.jpg'), 1400, 'JPEG'),
+        (os.path.join(handoff_assets, 'life-marina.jpg'), os.path.join(images_dir, 'life_marina.jpg'), 1400, 'JPEG'),
+        (os.path.join(handoff_assets, 'story-mother.jpg'), os.path.join(images_dir, 'story_mother.jpg'), 1000, 'JPEG'),
+        (os.path.join(workspace, 'Product/prnt-copy.png'), os.path.join(images_dir, 'sling_leopard.jpg'), 800, 'JPEG'),
+        (os.path.join(workspace, 'Product/blk-copy.png'), os.path.join(images_dir, 'sling_midnight.jpg'), 800, 'JPEG'),
+        (os.path.join(workspace, 'Product/wit-copy.png'), os.path.join(images_dir, 'sling_sage.jpg'), 800, 'JPEG'),
+        (os.path.join(handoff_assets, 'detail-strap.jpg'), os.path.join(images_dir, 'detail_strap.jpg'), 600, 'JPEG'),
+        (os.path.join(handoff_assets, 'detail-back.jpg'), os.path.join(images_dir, 'detail_back.jpg'), 600, 'JPEG'),
+        (os.path.join(handoff_assets, 'detail-leopard.jpg'), os.path.join(images_dir, 'detail_leopard.jpg'), 600, 'JPEG')
     ]
     
     print("Starting asset optimization for design mockup...")
-    for src_name, dest_name, max_width, fmt in tasks:
-        src_path = os.path.join(handoff_assets, src_name)
-        dest_path = os.path.join(images_dir, dest_name)
+    for src_path, dest_path, max_width, fmt in tasks:
         resize_image(src_path, dest_path, max_width, format_name=fmt)
     print("Asset optimization complete!")
