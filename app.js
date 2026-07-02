@@ -7,21 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const colorways = [
     {
       name: 'Wildheart Leopard',
-      img: 'images/sling_leopard.jpg',
+      img: 'Product/prnt-copy.png',
       price: 70,
       desc: 'Hand-printed leopard in warm camel and ink — unmistakable from across the room. For the parent who was never going to blend in.',
       specs: ['Hand-printed signature leopard', 'Gold woven fox label', 'Reinforced safety stitching']
     },
     {
       name: 'Midnight',
-      img: 'images/sling_midnight.jpg',
+      img: 'Product/blk-copy.png',
       price: 60,
       desc: 'Deep navy-black with the fox mark in gold foil — evening-ready and endlessly easy. The one that goes with the good coat.',
       specs: ['Midnight canvas, gold-foil mark', 'Padded one-shoulder strap', 'Hidden interior pocket']
     },
     {
       name: 'Sage',
-      img: 'images/sling_sage.jpg',
+      img: 'Product/wit-copy.png',
       price: 50,
       desc: 'Soft mineral sage on breathable cotton canvas — the quiet one. Pairs with everything, hides the everyday, keeps its calm.',
       specs: ['Breathable 100% cotton canvas', 'Padded one-shoulder strap', 'Machine washable, line dry']
@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const descLabel = document.getElementById('product-desc-label');
   const specsContainer = document.getElementById('product-specs-container');
   const swatches = document.querySelectorAll('.showroom-swatch-btn');
-  const sizeBtns = document.querySelectorAll('.showroom-size-btn');
   const addToCartBtn = document.getElementById('showroom-add-to-cart-btn');
   const bundleEstimateLabel = document.getElementById('showroom-bundle-estimate-label');
 
@@ -142,14 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Size Selector ---
-  sizeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      sizeBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
-
   // --- Drawer Open / Close Toggle ---
   const toggleCartDrawer = (show = true) => {
     if (show) {
@@ -201,7 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="cart-item-info">
           <div>
             <h4 class="cart-item-title">${item.name}</h4>
-            <p class="cart-item-meta">Size: ${item.size}</p>
           </div>
           <div class="cart-item-row">
             <span class="cart-item-price">$${item.price.toFixed(2)}</span>
@@ -246,16 +236,11 @@ document.addEventListener('DOMContentLoaded', () => {
   addToCartBtn.addEventListener('click', () => {
     const data = colorways[activeIndex];
     
-    // Read selected size
-    const activeSizeBtn = document.querySelector('.showroom-size-btn.active');
-    const size = activeSizeBtn ? activeSizeBtn.textContent : 'S';
-
     // Add to state
     cart.push({
       name: data.name,
       price: data.price,
-      image: data.img,
-      size: size
+      image: data.img
     });
 
     // Snuggle confirm animation on add button
