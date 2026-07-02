@@ -269,6 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
   checkoutBtn.addEventListener('click', () => {
     if (cart.length === 0) return;
 
+    const isBundleDeal = cart.length >= 2;
+
     // Group cart items by paymentLink and count quantities
     const groups = {};
     cart.forEach(item => {
@@ -280,11 +282,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const entries = Object.values(groups);
 
-    // Open first link in current tab, extras in new tabs
+    // Build URL: add quantity + auto-apply BUNDLE25 if bundle deal
     entries.forEach((entry, i) => {
-      const url = entry.qty > 1
-        ? `${entry.link}?prefilled_quantity=${entry.qty}`
-        : entry.link;
+      const params = new URLSearchParams();
+      if (entry.qty > 1) params.set('prefilled_quantity', entry.qty);
+      if (isBundleDeal) params.set('prefilled_promo_code', 'BUNDLE25');
+      const url = params.toString() ? `${entry.link}?${params.toString()}` : entry.link;
       if (i === 0) {
         window.location.href = url;
       } else {
