@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Wildheart Leopard',
       img: 'images/prnt-copy.png',
       price: 70,
+      paymentLink: 'https://buy.stripe.com/6oU4gzeTH8xo3tWdNfdwc00',
       desc: 'Hand-printed leopard in warm camel and ink — unmistakable from across the room. For the parent who was never going to blend in.',
       specs: ['Hand-printed signature leopard', 'Gold woven fox label', 'Reinforced safety stitching']
     },
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Midnight',
       img: 'images/blk-copy.png',
       price: 60,
+      paymentLink: 'https://buy.stripe.com/9B6aEX5j7eVMaWo38Bdwc01',
       desc: 'Deep navy-black with the fox mark in gold foil — evening-ready and endlessly easy. The one that goes with the good coat.',
       specs: ['Midnight canvas, gold-foil mark', 'Padded one-shoulder strap', 'Hidden interior pocket']
     },
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Sage',
       img: 'images/wit-copy.png',
       price: 50,
+      paymentLink: 'https://buy.stripe.com/9B6bJ14f33d43tW24xdwc02',
       desc: 'Soft mineral sage on breathable cotton canvas — the quiet one. Pairs with everything, hides the everyday, keeps its calm.',
       specs: ['Breathable 100% cotton canvas', 'Padded one-shoulder strap', 'Machine washable, line dry']
     }
@@ -240,7 +243,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cart.push({
       name: data.name,
       price: data.price,
-      image: data.img
+      image: data.img,
+      paymentLink: data.paymentLink
     });
 
     // Snuggle confirm animation on add button
@@ -261,23 +265,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 450);
   });
 
-  // Simulated Order Completion
+  // Real Stripe Checkout
   checkoutBtn.addEventListener('click', () => {
-    const orderNo = Math.floor(100000 + Math.random() * 900000);
-    const hasDiscount = cart.length >= 2;
-    
-    let alertMsg = `💖 Snuggle Order Complete!\n\nOrder Code: #HB${orderNo}\nTotal Price: ${cartTotalVal.textContent}\n\n`;
-    if (hasDiscount) {
-      alertMsg += `Double Snuggle bundle coupon (25% off) has been successfully applied!\n\n`;
-    }
-    alertMsg += `Thank you for choosing Habebé Essentials. Your hand-crafted package will ship within 24 hours.`;
-    
-    alert(alertMsg);
+    if (cart.length === 0) return;
 
-    // Reset State
-    cart = [];
-    updateCart();
-    toggleCartDrawer(false);
+    // Group cart items by paymentLink and count quantities
+    const groups = {};
+    cart.forEach(item => {
+      if (!groups[item.paymentLink]) {
+        groups[item.paymentLink] = { link: item.paymentLink, qty: 0 };
+      }
+      groups[item.paymentLink].qty++;
+    });
+
+    const entries = Object.values(groups);
+
+    // Open first link in current tab, extras in new tabs
+    entries.forEach((entry, i) => {
+      const url = entry.qty > 1
+        ? `${entry.link}?prefilled_quantity=${entry.qty}`
+        : entry.link;
+      if (i === 0) {
+        window.location.href = url;
+      } else {
+        window.open(url, '_blank');
+      }
+    });
   });
 
   // Newsletter form submission handling
