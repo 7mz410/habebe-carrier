@@ -9,3 +9,6 @@
 !images/**
 !.gitignore
 !optimize_assets.py
+!CNAME
+!robots.txt
+!sitemap.xml
