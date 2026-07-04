@@ -296,6 +296,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Accordion Logic
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const isActive = item.classList.contains('active');
+      
+      // Close all accordions
+      document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+      
+      // If it wasn't active, open it
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+
   // Newsletter form submission handling
   const emailForm = document.getElementById('email-subscribe-form');
   const submitLabel = document.getElementById('newsletter-submit-label');

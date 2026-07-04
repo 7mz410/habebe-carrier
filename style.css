@@ -277,8 +277,19 @@ body {
   line-height: 1.65;
   color: #E4E7E0;
   max-width: 480px;
-  margin: 0 0 40px;
+  margin: 0 0 16px;
   font-weight: 300;
+}
+
+.hero-suitability {
+  font-size: 16px;
+  color: #E0A24A;
+  margin: 0 0 32px;
+  font-weight: 400;
+}
+
+.hero-suitability strong {
+  font-weight: 600;
 }
 
 .hero-actions {
@@ -550,8 +561,55 @@ body {
   line-height: 1.7;
   color: var(--color-text-muted-light);
   font-weight: 300;
-  margin: 0 0 30px;
-  min-height: 82px;
+  margin: 0;
+}
+
+/* Accordions */
+.accordion-group {
+  margin: 20px 0 30px;
+  border-top: 1px solid rgba(245, 240, 231, 0.15);
+}
+.accordion-item {
+  border-bottom: 1px solid rgba(245, 240, 231, 0.15);
+}
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  padding: 18px 0;
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F5F0E7;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+.accordion-header:hover {
+  color: var(--color-gold);
+}
+.accordion-icon {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--color-gold);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+  padding-bottom: 20px;
 }
 
 /* Specs list */
@@ -559,7 +617,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 11px;
-  margin-bottom: 34px;
 }
 
 .showroom-spec-item {
@@ -571,6 +628,11 @@ body {
   font-weight: 300;
   border-bottom: 1px solid rgba(245, 240, 231, 0.10);
   padding-bottom: 11px;
+}
+
+.showroom-spec-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .showroom-spec-bullet {
@@ -707,6 +769,32 @@ body {
   font-size: 12px;
   color: #9FB2AB;
   font-weight: 300;
+}
+
+/* Trust Badges */
+.trust-badges {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.trust-badge {
+  font-size: 12px;
+  color: var(--color-text-muted-light);
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+
+.footer-trust-badges {
+  margin-top: 0;
+  justify-content: flex-end;
+}
+
+.footer-trust-badges .trust-badge {
+  color: rgba(245, 240, 231, 0.7);
 }
 
 /* Built for the Long Carry (Craft Details) */
